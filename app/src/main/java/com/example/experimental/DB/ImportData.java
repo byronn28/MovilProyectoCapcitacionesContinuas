@@ -26,7 +26,7 @@ public class ImportData extends DataBase {
     private RequestQueue requestQueue;
     private Context conection;
     private ContentValues values;
-    private String host = "192.168.100.31";
+    private String host = "192.168.0.129";
     private int timeout = 10000;
 
     public ImportData(@NotNull Context context) {

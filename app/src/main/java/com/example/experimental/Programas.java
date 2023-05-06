@@ -1,5 +1,6 @@
 package com.example.experimental;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,17 +9,19 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.example.experimental.Adaptadores.ProgramasAdaptador;
 import com.example.experimental.DB.DataBase;
 import com.example.experimental.Modelos.MProgramas;
 import com.example.experimental.Utilidades.Atributos;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Programas extends AppCompatActivity {
-
+    private BottomNavigationView bottomNavigationView;
     MProgramas mProgramas;
     ArrayList<MProgramas> listaProgramas;
 
@@ -33,6 +36,37 @@ public class Programas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_programas);
+
+        //boton de navegacion
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.action_programas);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+
+                    case R.id.action_misCursos:
+                        startActivity(new Intent(getApplicationContext(),Asistencia.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.action_Cursos:
+                        startActivity(new Intent(getApplicationContext(),Cursos.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.action_perfil:
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
 
         //use database
         conection = new DataBase(getApplicationContext());

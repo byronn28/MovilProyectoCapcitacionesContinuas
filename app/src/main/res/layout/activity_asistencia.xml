@@ -15,14 +15,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp">
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="@string/txt_fechaAsistencia"
+                android:layout_marginStart="4dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_input_layout_email"
@@ -30,15 +33,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:hint="email"
+                android:hint="@string/txt_fechaAsistencia"
                 android:layout_weight="1"
                 app:expandedHintEnabled="false">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
+                    android:layout_height="50dp"
+                    android:inputType="textEmailAddress"
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -46,12 +50,15 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recicleasistencia"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"/>
 
         <Button
             android:id="@+id/btnguardarasistencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:drawableRight="@drawable/ic_save"
+            android:text="@string/txt_btnGuardarAsistencia"
+            app:backgroundTint="#004f9f" />
     </LinearLayout>
 </ScrollView>

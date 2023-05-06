@@ -1,5 +1,6 @@
 package com.example.experimental;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,17 +9,19 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.example.experimental.Adaptadores.CursosAdaptador;
 import com.example.experimental.DB.DataBase;
 import com.example.experimental.Modelos.MCursos;
 import com.example.experimental.Modelos.MProgramas;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Cursos extends AppCompatActivity {
-
+    private BottomNavigationView bottomNavigationView;
     MCursos mCursos;
     ArrayList<MCursos> listaCursos;
 
@@ -34,6 +37,36 @@ public class Cursos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cursos);
 
+        //boton de navegacion
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.action_Cursos);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+
+                    case R.id.action_misCursos:
+                        startActivity(new Intent(getApplicationContext(),Asistencia.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.action_programas:
+                        startActivity(new Intent(getApplicationContext(),Programas.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.action_perfil:
+                        startActivity(new Intent(getApplicationContext(),Perfil.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+/*
         //use database
         conection = new DataBase(getApplicationContext());
         //use consultar datos
@@ -44,7 +77,7 @@ public class Cursos extends AppCompatActivity {
         recycleViewCursos = (RecyclerView) findViewById(R.id.recicleCursos);
 
 
-        consultarListaCursos(mProgramas.getIdPrograma(), id_usu);
+        consultarListaCursos(mProgramas.getIdPrograma(), id_usu);*/
     }
 
     private void consultarListaCursos(int id_pro, int id_usu) {

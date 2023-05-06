@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,18 +20,20 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:padding="2dp">
+            android:padding="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
+
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/txtvnombrecurso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     android:text="TextView" />
 
                 <ImageView
@@ -43,6 +46,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -68,10 +72,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:text="@string/txt_descripcionCurso"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/txtvtipocurso"
+                            android:id="@+id/txtvareacurso"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -88,19 +93,22 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="TextView" />
+                            android:text="@string/txt_duracionCurso"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/txtvareacurso"
+                            android:id="@+id/txtvfechainiciocurso"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="TextView" />
                     </LinearLayout>
+
                     <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -108,11 +116,12 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/txtvfechainiciocurso"
+                                android:id="@+id/txtvtipocurso"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="TextView" />
+                                android:text="@string/txt_tipoCurso"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/txtvfechafincurso"

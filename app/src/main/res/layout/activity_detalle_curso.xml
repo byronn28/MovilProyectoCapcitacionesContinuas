@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Detalle_Curso">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -46,6 +43,26 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="600dp" />
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/guideline1"
+            android:gravity="center"
+            android:layout_margin="30dp">
+
         <TextView
             android:id="@+id/txtvnombredtcurso"
             android:layout_width="wrap_content"
@@ -61,6 +78,7 @@
             android:id="@+id/imgdtcurso"
             android:layout_width="200dp"
             android:layout_height="200dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -78,7 +96,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="@+id/guideline1"
-            android:layout_margin="30dp">
+            android:layout_margin="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,27 +108,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
-
-                <TextView
-                    android:id="@+id/txtvhorariodtcurso"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtvmodalidaddtcurso"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="@string/txt_tipoCurso"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/txtvtipodtcurso"
@@ -126,11 +125,33 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/txtvespecialidaddtcurso"
+                    android:id="@+id/modalidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/txt_modalidadCurso"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txtvmodalidadtcurso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/txt_areaCurso"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/txtvareadtcurso"
@@ -150,14 +171,15 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/txtvfechainiciodtcurso"
+                        android:id="@+id/duracion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/txt_duracionCurso"
+                        android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/txtvfechafindtcurso"
+                        android:id="@+id/txtvduracioncurso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -170,7 +192,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_margin="20dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="@+id/linearLayout"
@@ -185,18 +207,47 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/textView8gf"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/txtvdescripciondtcurso"
+                        <TextView
+                            android:id="@+id/textView8gf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/txt_fechaInicioCurso"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/txtvfechainiciondtcurso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView" />
+                    </LinearLayout>
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/fechafin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/txt_fechaFinCurso"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/txtvfechafindtcurso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView" />
+                    </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
@@ -205,7 +256,7 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_margin="20dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="@+id/linearLayout2"
@@ -221,17 +272,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
-                    <TextView
-                        android:id="@+id/textView8ew"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/txtvobjetivosdtcurso"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        <TextView
+                            android:id="@+id/objetivos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/txt_objetivoCurso"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/txtvobjetivosdtcurso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView" />
+                    </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
@@ -240,7 +301,7 @@
             android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_margin="20dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
             app:layout_constraintStart_toStartOf="@+id/linearLayout3"
@@ -256,19 +317,30 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical" >
 
-                    <TextView
-                        android:id="@+id/textView8f"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/txtvrequisitosdtcurso"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        <TextView
+                            android:id="@+id/requisitos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/txt_prerequisitosCurso"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/txtvrequisitosdtcurso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView" />
+                    </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+</RelativeLayout>
